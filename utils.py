@@ -180,22 +180,20 @@ def plot_save_senmap(sen_img, ch="Y", model="Resnet"):
         bottom_lst.append(bottom)
         top_lst.append(top)
         mean_lst.append(mean)
-    plt.figure(figsize=(10,8))
-    plt.plot(bottom_lst)
-    plt.plot(top_lst)
+    # plt.figure(figsize=(10,8))
+    # plt.plot(bottom_lst)
+    # plt.plot(top_lst)
     # plt.plot(mean_lst)
     # mean_lst = np.array(mean_lst)
     # Range = np.max(mean_lst)-np.min(mean_lst)
     # mean_lst = mean_lst/Range
     # mean_val = np.mean(mean_lst)
     # mean_lst = mean_lst-mean_val+1
-    #
-    plt.plot(mean_lst)
-    #
-    plt.xticks(np.arange(1,65,4))
-    plt.title(ch+' channel L1 sensitivity, per image')
-    plt.savefig(ch+model+".pdf")
-    plt.figure().clear()
-    print(ch,top_lst)
-    print(ch,mean_lst)
-    print(ch,bottom_lst)
+    
+    # plt.plot(mean_lst)
+    
+    # plt.xticks(np.arange(1,65,4))
+    # plt.title(ch+' channel L1 sensitivity, per image')
+    # plt.savefig(ch+model+".pdf")
+    # plt.figure().clear()
+    return [bottom_lst, mean_lst, top_lst]
