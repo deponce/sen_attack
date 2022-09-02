@@ -162,10 +162,6 @@ def plot_confidence_interval(x, top, bottom, mean, horizontal_line_width=0.25, c
     return mean
 
 def plot_save_senmap(sen_img, ch="Y", model="Resnet"):
-    sen_img = sen_img[:100,:,:]
-
-    print("size : ", np.shape(Y_sen_list))
-    
     zigzag = get_zigzag()
     lst_length = sen_img.shape[0]
     zigzag_sen_img = np.zeros((64,lst_length))
@@ -193,20 +189,6 @@ def plot_save_senmap(sen_img, ch="Y", model="Resnet"):
     # mean_lst = mean_lst/Range
     # mean_val = np.mean(mean_lst)
     # mean_lst = mean_lst-mean_val+1
-<<<<<<< HEAD
-    #
-    plt.plot(mean_lst)
-    #
-    plt.xticks(np.arange(1,65,4))
-    plt.title(ch+' channel L1 sensitivity, per image')
-    plt.savefig(ch+model+".pdf")
-    plt.figure().clear()
-
-    return top_lst, mean_lst, bottom_lst
-    # print(ch,top_lst)
-    # print(ch,mean_lst)
-    # print(ch,bottom_lst)
-=======
     
     # plt.plot(mean_lst)
     
@@ -215,4 +197,3 @@ def plot_save_senmap(sen_img, ch="Y", model="Resnet"):
     # plt.savefig(ch+model+".pdf")
     # plt.figure().clear()
     return [bottom_lst, mean_lst, top_lst]
->>>>>>> 1901ecf2befb0dff93917ffc93a14b41f644d486
