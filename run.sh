@@ -1,4 +1,4 @@
-for model in resnet18 alexNet mobilenet
+for model in vgg11 #resnet18 alexNet mobilenet
 do
 	for attack in PGD CW
 	do

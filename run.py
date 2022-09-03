@@ -164,7 +164,45 @@ def main(args):
 	[Cb_adv_b,Cb_adv_m,Cb_adv_u] = plot_save_senmap(Cb_sen_list, "Cb_adv", model_name)
 	[Cr_adv_b,Cr_adv_m,Cr_adv_u] = plot_save_senmap(Cr_sen_list, "Cr_adv", model_name)
 
+	plt.figure(figsize=(10, 8), dpi=1024)
+	plt.plot(Y_adv_b,c='darkred',alpha = 0.6)
+	plt.plot(Y_adv_m, label="Y_adv",c='darkred',alpha = 0.8)
+	plt.plot(Y_adv_u,c='darkred',alpha = 0.6)
+	plt.plot(Y_b, c='teal', alpha = 0.6)
+	plt.plot(Y_m, label="Y_ori", c='teal', alpha = 0.8)
+	plt.plot(Y_u, c='teal', alpha = 0.6)
+	plt.title(model_name+", "+attack+", "+"Y channel ")
 
+	plt.legend()
+	plt.savefig(model_name+"_"+attack+"_"+"Y_channel.pdf")
+
+
+
+	plt.figure(figsize=(10, 8), dpi=1024)
+	plt.plot(Cb_adv_b,c='darkred',alpha = 0.6)
+	plt.plot(Cb_adv_m, label="Y_adv",c='darkred',alpha = 0.8)
+	plt.plot(Cb_adv_u,c='darkred',alpha = 0.6)
+
+	plt.plot(Cb_b,alpha = 0.6, c='teal')
+	plt.plot(Cb_m, label="Y_ori", c='teal', alpha = 0.8)
+	plt.plot(Cb_u, c='teal', alpha = 0.6)
+	plt.title(model_name+", "+attack+", "+"Cb channel ")
+
+	plt.legend()
+	plt.savefig(model_name+"_"+attack+"_"+"Cb_channel.pdf")
+
+
+	plt.figure(figsize=(10, 8), dpi=1024)
+	plt.plot(Cr_adv_b,c='darkred',alpha = 0.6)
+	plt.plot(Cr_adv_m, label="Y_adv",c='darkred',alpha = 0.8)
+	plt.plot(Cr_adv_u,c='darkred',alpha = 0.6)
+	plt.plot(Cr_b,alpha = 0.6, c='teal')
+	plt.plot(Cr_m, label="Y_ori", c='teal', alpha = 0.8)
+	plt.plot(Cr_u, c='teal', alpha = 0.6)
+	plt.title(model_name+", "+attack+", "+"Cr channel ")
+
+	plt.legend()
+	plt.savefig(model_name+"_"+attack+"_"+"Cr_channel.pdf")
 
 
 
